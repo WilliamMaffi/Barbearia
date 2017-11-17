@@ -1,0 +1,29 @@
+
+@(produtos : List[Produto])
+
+@main("Listagem") {
+
+    <table class="table table-bordered table-striped ">
+    <thead class="table-inverse">
+        <tr>
+            <th scope="col">Produto</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Unidade</th>
+            <th scope="col">Preço</th>
+        </tr>
+    </thead>
+    <tbody>
+    @for(item <- produtos){
+        <tr>
+            <td>@item.nome</td>
+            <td>@item.descricao</td>
+            <td>@item.unidade</td>
+            <td>@item.preco</td>
+        </tr>
+    }   
+    </tbody>
+    </table>
+    
+              
+            
+}

@@ -1,0 +1,22 @@
+
+
+@(message: String)(formProduto: Form[Produto])
+
+@import helper._
+@import b4.vertical.fieldConstructor
+
+
+@main("Cadastro de Produto") {
+
+	@*nosso content*@
+
+	<h1>Cadastro de Produto</h1>
+	@b4.form(CSRF(routes.HomeController.cadastroDeNovoProduto)){
+		@b4.text(formProduto("nome"), '_label -> "Nome")
+		@b4.text(formProduto("desc"), '_label -> "Descrição")
+		@b4.text(formProduto("un"), '_label -> "Unidade")
+		@b4.number(formProduto("preco"), '_label -> "Preço")
+		@b4.submit('class -> "btn btn-outline-primary"){ Adicionar }
+	} 
+
+}

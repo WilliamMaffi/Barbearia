@@ -1,0 +1,18 @@
+@(message: String)(formBarbearia: Form[Barbearia])
+
+@import helper._
+@import b4.vertical.fieldConstructor
+
+
+@main("Barbearia") {
+
+	@*nosso content*@
+
+	<h1>Barbearia</h1>
+	@b4.form(CSRF(routes.HomeController.barbearia)){
+		@b4.text(formBarbearia("nome"), '_label -> "Nome")
+		@b4.text(formBarbearia("desc"), '_label -> "Telefone")
+
+	} 
+
+}
